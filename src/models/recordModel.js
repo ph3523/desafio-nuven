@@ -5,7 +5,7 @@ const createRecords = async (data) => {
     for (const recordData of data) {
         const createdRecord = await prisma.records.create({
             data: {
-                dataset_id: data.dataset_id,
+                dataset_id: recordData.dataset_id,
                 dados_json: recordData.dados_json
             }
         });
@@ -14,3 +14,26 @@ const createRecords = async (data) => {
     return createdRecords;
 };
 
+const getRecordsByDatasetId = async (datasetId) => {
+    return prisma.records.findMany({
+        where: {
+            dataset_id: datasetId
+        }
+    });
+}
+
+const searchRecords = async (query, limit = 50) => {
+    return prisma.$queryRaw`
+        SELECT r.*, d.nome as dataset_nome 
+        FROM "Records" r
+        JOIN "Datasets" d ON r.dataset_id = d.id
+        WHERE r.dados_json::text ILIKE ${`%${query}%`}
+        LIMIT ${limit}
+    `;
+};
+
+module.exports = {
+    createRecords,
+    getRecordsByDatasetId,
+    searchRecords
+};
