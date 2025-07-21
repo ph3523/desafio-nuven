@@ -7,7 +7,7 @@ const register = async (req, res) =>{
         const userData = req.body;
 
         const newUser = await userModel.createUser(userData);
-        res.status(201).json({ message: 'Usuário criado com sucesso', user: newUser });
+        res.status(201).json({ user: newUser, message: 'Usuário criado com sucesso' });
     } catch (error) {
         console.error('Erro ao criar usuário:', error);
         res.status(500).json({ error: error.message || 'Erro ao criar usuário' });
@@ -29,7 +29,7 @@ const login = async (req, res) => {
         }
 
         const token = jwt.sign(
-            { email: user.email, senha_hash: user.senha_hash },
+            { id: user.id, email: user.email },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
@@ -44,4 +44,31 @@ const login = async (req, res) => {
         console.error('Erro ao fazer login:', error);
         res.status(500).json({ error: error.message || 'Erro ao fazer login' });
     }
+};
+
+const getMe = async (req, res) => {
+    try {
+        const userId = req.user.id;
+
+        const user = await userModel.getUserById(userId);
+        if (!user) {
+            return res.status(404).json({ error: 'Usuário não encontrado' });
+        }
+
+        res.json({
+            id: user.id,
+            nome: user.nome,
+            email: user.email
+        });
+    } catch (error) {
+        console.error('Erro ao obter usuário:', error);
+        res.status(500).json({ error: error.message || 'Erro ao obter usuário' });
+
+    }
+};
+
+module.exports = {
+    register,
+    login,
+    getMe
 };
