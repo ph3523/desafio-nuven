@@ -1,0 +1,53 @@
+{
+  "perguntas": {
+    "contrato": [
+      "Este contrato tem alguma cláusula especial?",
+      "Qual a duração deste contrato?",
+      "Quem são as partes envolvidas neste contrato?",
+      "Posso transferir este contrato para outra pessoa?",
+      "O contrato pode ser renovado automaticamente?"
+    ],
+    "pagamento": [
+      "Quais são as formas de pagamento aceitas?",
+      "Qual é o prazo para pagamento?",
+      "Há multa por atraso de pagamento?",
+      "O pagamento pode ser parcelado?",
+      "Existe desconto para pagamento antecipado?"
+    ],
+    "cláusula": [
+      "A cláusula 10 pode ser renegociada?",
+      "O que diz a cláusula sobre confidencialidade?",
+      "Existe alguma cláusula de rescisão automática?",
+      "As cláusulas podem ser modificadas após assinatura?",
+      "Há alguma cláusula relacionada a casos de força maior?"
+    ],
+    "prazo": [
+      "Qual é o prazo para entrega dos documentos?",
+      "O prazo pode ser estendido?",
+      "Há penalidades por não cumprir o prazo?",
+      "Qual o prazo de validade desta proposta?",
+      "Os prazos são contados em dias úteis ou corridos?"
+    ],
+    "seguro": [
+      "O seguro cobre danos por inundação?",
+      "Qual é a validade do seguro?",
+      "O seguro pode ser renovado automaticamente?",
+      "Quais situações não são cobertas pelo seguro?",
+      "É possível aumentar o valor da cobertura do seguro?"
+    ],
+    "rescisão": [
+      "Quais são as condições para rescisão do contrato?",
+      "A rescisão antecipada implica em multa?",
+      "Como funciona o aviso prévio para rescisão?",
+      "É possível rescindir o contrato sem justificativa?",
+      "Qual o prazo mínimo antes de solicitar uma rescisão?"
+    ]
+  },
+  "perguntasGerais": [
+    "Onde posso encontrar mais informações?",
+    "Quem é o responsável por este documento?",
+    "Este documento ainda está válido?",
+    "Quando foi a última atualização deste documento?",
+    "Preciso de algum documento adicional?"
+  ]
+}

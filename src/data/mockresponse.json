@@ -1,0 +1,29 @@
+{
+  "palavrasChave": [
+    {
+      "chave": "contrato",
+      "resposta": "O contrato é um acordo formal entre as partes."
+    },
+    {
+      "chave": "pagamento",
+      "resposta": "Este documento contém informações sobre formas de pagamento e condições financeiras."
+    },
+    {
+      "chave": "cláusula",
+      "resposta": "Este documento trata de cláusulas contratuais específicas."
+    },
+    {
+      "chave": "prazo",
+      "resposta": "Os prazos estabelecidos devem ser cumpridos conforme documentação."
+    },
+    {
+      "chave": "seguro",
+      "resposta": "Este documento contém informações sobre apólices de seguro e coberturas."
+    },
+    {
+      "chave": "rescisão",
+      "resposta": "Existem condições específicas para rescisão descritas no documento."
+    }
+  ],
+  "respostaDefault": "A IA identificou informações relevantes."
+}
