@@ -5,7 +5,7 @@ const path = require('path');
 
 const mockRespostas = JSON.parse(
     fs.readFileSync(
-        path.join(__dirname, '../data/mockResponse.json'),
+        path.join(__dirname, '../data/mockresponse.json'),
         'utf8'
     )
 );

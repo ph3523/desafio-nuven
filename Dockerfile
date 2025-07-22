@@ -1,22 +1,21 @@
 FROM node:22
 
-# Criar diretório da aplicação
 WORKDIR /app
 
-# Copiar arquivos de definição de pacotes
 COPY package*.json ./
 
-# Instalar dependências
 RUN npm install
 
-# Copiar o código da aplicação
+RUN mkdir -p src/data
+
 COPY . .
 
-# Gerar o cliente Prisma
+COPY src/data/mockresponse.json src/data/mockResponse.json
+
 RUN npx prisma generate
 
-# Expor a porta da aplicação
+RUN chmod +x ./entrypoint.sh
+
 EXPOSE 3001
 
-# Comando para executar a aplicação
-CMD ["npm", "start"]
+CMD ["./entrypoint.sh"]
