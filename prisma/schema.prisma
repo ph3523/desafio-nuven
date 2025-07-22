@@ -29,6 +29,7 @@ model Datasets {
   criado_em   DateTime  @default(now())
   usuario     Users     @relation(fields: [usuario_id], references: [id])
   records     Records[]
+  queries     Queries[]
 }
 
 model Records {
@@ -42,8 +43,10 @@ model Records {
 model Queries {
   id          Int       @id @default(autoincrement())
   usuario_id  Int
+  dataset_id  Int
   pergunta    String
   resposta    String
   criado_em   DateTime  @default(now())
   usuario     Users     @relation(fields: [usuario_id], references: [id])
+  datasets    Datasets  @relation(fields: [dataset_id], references: [id])
 }
